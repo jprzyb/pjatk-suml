@@ -12,6 +12,7 @@ Best if it's 3.13.1 or newer!
 Run the following command in your terminal:
 ```bash
 pip install streamlit
+pip install google-cloud-vision
 ```
 
 ## 3. Run app
@@ -19,3 +20,8 @@ Run the following command in your terminal:
 ```bash
 streamlit run Streamlit.py
 ```
+
+## 4. Using app
+In opened web app you can upload picture of car you want
+and send it to AI by pressing the button below.
+The result will be shown below button.
