@@ -8,10 +8,15 @@ python --version
 If Python is not installed, download it from: Python.org.
 Best if it's 3.13.1 or newer!
 
-## 2. Install Streamlit (if you haven't already)
+## 2.1. Install Streamlit (if you haven't already)
 Run the following command in your terminal:
 ```bash
 pip install streamlit
+```
+
+## 2.2. Install Google Cloud Vision (if you haven't already)
+Run the following command in your terminal:
+```bash
 pip install google-cloud-vision
 ```
 
@@ -21,7 +26,16 @@ Run the following command in your terminal:
 streamlit run Streamlit.py
 ```
 
-## 4. Using app
+## 4. Google cloud vision key
+Please paste your google cloud vision key in
+
+main folder and rename it to:
+
+plenary-ellipse-457613-m8-569ccf28dac3.json
+
+## 5. Using app
 In opened web app you can upload picture of car you want
+
 and send it to AI by pressing the button below.
-The result will be shown below button.
+
+The result will be shown in matter of seccond.
