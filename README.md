@@ -39,3 +39,26 @@ In opened web app you can upload picture of car you want
 and send it to AI by pressing the button below.
 
 The result will be shown in matter of seccond.
+
+## 6. Running the app in Docker
+Edit the line in the **Streamlit.py** file:
+```
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "plenary-ellipse-457613-m8-569ccf28dac3.json"
+```
+
+to
+```
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/app/plenary-ellipse-457613-m8-569ccf28dac3.json"
+```
+
+Then paste files: **Dockerfile**, **plenary-ellipse-457613-m8-569ccf28dac3.json**, **requirements.txt** and **Streamlit.py** into a one folder. Enter the folder in the terminal, then run the following command:
+```bash
+docker build -t cars-app .
+```
+
+After the building is done, you can run the image:
+```bash
+docker run -p 8501:8501 cars-app
+```
+
+You can now use the app by entering `localhost:8501` in your browser.
