@@ -43,12 +43,12 @@ The result will be shown in matter of seccond.
 ## 6. Running the app in Docker
 Edit the line in the **Streamlit.py** file:
 ```
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "plenary-ellipse-457613-m8-569ccf28dac3.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google-key.json"
 ```
 
 to
 ```
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/app/plenary-ellipse-457613-m8-569ccf28dac3.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google-key.json"
 ```
 
 Then paste files: **Dockerfile**, **plenary-ellipse-457613-m8-569ccf28dac3.json**, **requirements.txt** and **Streamlit.py** into a one folder. Enter the folder in the terminal, then run the following command:

@@ -2,7 +2,7 @@ import streamlit as st
 from google.cloud import vision
 import os
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "plenary-ellipse-457613-m8-569ccf28dac3.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/app/google-key.json"
 
 def analyze_uploaded_image(file_bytes):
     """
