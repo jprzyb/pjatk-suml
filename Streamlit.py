@@ -3,8 +3,9 @@ from google.cloud import vision
 import os
 import uuid
 from pathlib import Path
+import tempfile
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "GOOGLE_KEY"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "app/google-key.json"
 
 
 def analyze_uploaded_image(file_bytes):
@@ -48,14 +49,6 @@ st.markdown(
     aby precyzyjnie określić typ nadwozia samochodu na przesłanym zdjęciu.
     """
 )
-
-# Zapis do pliku tymczasowego
-with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as temp_file:
-    temp_file.write(google_key_json)
-    temp_file_path = temp_file.name
-
-# Ustawienie ścieżki do tymczasowego pliku z kluczem
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = temp_file_path
 
 uploaded_file = st.file_uploader("Wgraj zdjęcie samochodu", type=["jpg", "jpeg", "png"])
 
