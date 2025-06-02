@@ -46,12 +46,12 @@ def save_uploaded_image(file_bytes, filename, transaction_id):
 
 
 def save_results_to_output(text_lines, transaction_id):
-    """
-    Zapisuje wynik analizy do folderu output/{uuid}/output.txt
-    """
-    file_path = Path(f"output/{transaction_id}.txt")
+    output_dir = Path("output")
+    output_dir.mkdir(exist_ok=True)  # tworzy folder, jeśli go nie ma
+    file_path = output_dir / f"{transaction_id}.txt"
     with open(file_path, "w", encoding="utf-8") as f:
         f.write("\n".join(text_lines))
+
 
 
 st.title("Car Body identification")
