@@ -3,7 +3,6 @@ from google.cloud import vision
 import os
 import uuid
 from pathlib import Path
-import tempfile
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "app/google-key.json"
 
