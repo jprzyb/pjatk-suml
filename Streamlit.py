@@ -4,7 +4,20 @@ import os
 import uuid
 from pathlib import Path
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "app/google-key.json"
+import os
+
+key_path = "app/google-key.json"
+credentials_json = os.getenv("GOOGLE_CREDENTIALS_JSON")
+
+if not os.path.exists(key_path):
+    if credentials_json:
+        os.makedirs(os.path.dirname(key_path), exist_ok=True)
+        with open(key_path, "w") as f:
+            f.write(credentials_json)
+    else:
+        raise RuntimeError("Missing GOOGLE_CREDENTIALS_JSON env or key file.")
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key_path
 
 
 def analyze_uploaded_image(file_bytes):
