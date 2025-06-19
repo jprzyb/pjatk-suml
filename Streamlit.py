@@ -10,7 +10,7 @@ key_path = "app/google-key.json"
 credentials_json = os.getenv("GOOGLE_CREDENTIALS_JSON")
 
 # Azure Blob Storage
-AZURE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+AZURE_CONNECTION_STRING = os.getenv("AZURE_STORAGE")
 CONTAINER_NAME = "pjatksumldata"
 blob_service_client = BlobServiceClient.from_connection_string(AZURE_CONNECTION_STRING)
 container_client = blob_service_client.get_container_client(CONTAINER_NAME)
